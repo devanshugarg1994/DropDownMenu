@@ -15,7 +15,7 @@ a{
 }
 
 .toggle, [id^=drop]{
-    xdisplay: none;
+    display: none;
 }
 
 #logo{
@@ -75,7 +75,7 @@ nav ul{
     list-style: none;
 }
 
-nav ul li{
+nav ul li{ 
 margin: 0;
 display: inline-block;
 background-color: rgb(228, 111, 228)
@@ -88,4 +88,113 @@ nav a{
     font-size: 20px;
     line-height: 60px;
     text-decoration: none;
+}
+
+nav ul li ul li:hover{
+    background-color: rgb(30, 27, 207);
+
+}
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 60px;;
+}
+
+nav ul ul li{
+    width: 170px;
+    float: none;
+    display: list-item;
+    position: relative;
+}
+
+nav ul ul ul li {
+position: relative;
+top:-60px;
+left: 170px;
+}
+
+nav ul li:hover>ul{
+    display: inherit;
+}
+li>a:after{
+    content: " +";
+}
+
+li>a:only-child:after{
+    content: "";
+}
+
+@media all and (max-width: 768px){
+
+    nav {
+        margin: 0;
+      }
+      nav ul{
+        float:none;
+      }
+      .toggle+a,
+      .menu {
+        display: none;
+      }
+    
+      .toggle {
+        display: block;
+        background-color: #515f9c;
+        padding: 0 20px;
+        color: #FFF;
+        font-size: 20px;
+        line-height: 60px;
+        text-decoration: none;
+        border: none;
+      }
+    
+      .toggle:hover {
+        background-color: #7083d8;
+      }
+    
+      [id^=drop]:checked+ul {
+        display: block;
+      }
+    
+      nav ul li {
+        display: block;
+        width: 100%;
+      }
+    
+      nav ul ul .toggle,
+      nav ul ul a {
+        padding: 0 40px;
+      }
+    
+      nav ul ul ul a {
+        padding: 0 80px;
+      }
+    
+      nav ul ul ul a {
+        background-color: #141625;
+      }
+    
+      nav ul li ul li .toggle,
+      nav ul ul a {
+        background-color: #1f243b;
+      }
+    
+      nav ul ul {
+        float: none;
+        position: static;
+        color: #ffffff;
+      }
+    
+      nav ul ul li:hover>ul,
+      nav ul li:hover>ul {
+        display: none;
+      }
+    
+      nav ul ul li {
+        display: block;
+        width: 100%;
+      }
+    
+      nav ul ul ul li {
+        position: static;
 }
